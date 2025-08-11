@@ -24,6 +24,10 @@ let recipes =[];
     res.render("new");
  ;});
 
+ app.get("/post", (req, res) =>{
+      res.render("index", {recipes});
+ });
+
 app.post("/new", (req, res) => {
     const { title, ingredients, instructions, author } = req.body; 
 
