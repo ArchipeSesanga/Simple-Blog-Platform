@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Recipe</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="content">
+    <div class="container pt-4">
+        <h2 class="text-center">Add a New Recipe 👨🏾‍🍳</h2>
+
+        <form action="/new" method="POST" style="max-width: 600px; margin: auto;">
+            <!-- Recipe Title -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Recipe Title</label>
+                <input type="text" id="title" name="title" class="form-control" required placeholder="E.g. Grandma's Apple Pie">
+            </div>
+
+            <!-- Author Name -->
+            <div class="mb-3">
+                <label for="author" class="form-label">Your Name</label>
+                <input type="text" id="author" name="author" class="form-control" placeholder="Optional">
+            </div>
+
+            <!-- Ingredients -->
+            <div class="mb-3">
+                <label for="ingredients" class="form-label">Ingredients</label>
+                <textarea id="ingredients" name="ingredients" rows="5" class="form-control" required placeholder="List each ingredient on a new line"></textarea>
+            </div>
+
+            <!-- Instructions -->
+            <div class="mb-3">
+                <label for="instructions" class="form-label">Instructions</label>
+                <textarea id="instructions" name="instructions" rows="7" class="form-control" required placeholder="Step-by-step cooking instructions"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Submit Recipe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="sidenav">
+    <div class="container">
+        <div class="col">
+            <div class="container-link">
+                <a href="/">Home</a>
+            </div>
+            <div class="container-link">
+                <a href="/new">New Recipe</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

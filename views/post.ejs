@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Recipes</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container text-center pt-4">
+        <h2>LIST OF RECIPES 👨🏾‍🍳</h2>
+        <p>ENJOYYYYY!! 💯</p>
+        <a href="/new" class="btn btn-lg btn-primary" style="background-color: #f8a9ad;">Add New Recipe</a>
+    </div>
+
+    <!-- Recipes List -->
+    <div class="container mt-5">
+        <% if (recipes.length===0) { %>
+            <p class="text-center">No recipes yet. Be the first to share one!</p>
+            <% } else { %>
+                <div class="row">
+                    <% recipes.forEach((recipe, index)=> { %>
+                        <div class="col-md-6 mb-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <%= recipe.title %>
+                                    </h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        By: <%= recipe.author || "Anonymous" %>
+                                    </h6>
+                                    <p><strong>Ingredients:</strong></p>
+                                    <ul>
+                                        <% recipe.ingredients.split('\n').forEach(ingredient=> { %>
+                                            <li>
+                                                <%= ingredient %>
+                                            </li>
+                                            <% }) %>
+                                    </ul>
+                                    <p><strong>Instructions:</strong></p>
+                                    <p>
+                                        <%= recipe.instructions %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <% } %>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidenav">
+        <div class="container">
+            <div class="col">
+                <div class="container-link">
+                    <a href="/">Home</a>
+                </div>
+                <div class="container-link">
+                    <a href="/new">New Recipe</a>
+                </div>
+
+                  <div class="container-link">
+                <a href="/post">Feeds</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
